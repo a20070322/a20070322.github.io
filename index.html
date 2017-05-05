@@ -8,6 +8,10 @@
     张晓东
 </body>
 </html>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
-    alert("zxd")
+    $.get('https://api.douban.com/v2/book/1220562', function(data) {
+        /*optional stuff to do after success */
+        console.log(data);
+    });
 </script>
