@@ -10,12 +10,24 @@
 </html>
 <script type="text/javascript" src="jquery-1.11.3.js"></script>
 <script type="text/javascript">
+    // $.get('https://api.douban.com/v2/book/1220562', function(data) {
+    //     /*optional stuff to do after success */
+    //     console.log(data);
+    // });
     $.ajax({
-         url:"http://cloud.bmob.cn/1cf19cbebb0bdf1a/getTotalPV",
-        dataType:'jsonp',           data:'',
-         jsonp:'callback',
-         success:function(result) {
-            alert(result.results[0].totalPV);
-         }
-     });
+        url: 'https://api.douban.com/v2/book/1220562',
+        type: 'GET',
+        dataType: 'JSONP'
+    })
+    .done(function(data) {
+        console.log("success");
+        console.log(data)
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
 </script>
